@@ -1,0 +1,15 @@
+[
+  {
+    "_id": { "$oid": "63509fb7d33a389b5a15b2b9" },
+    "nome": "jadson",
+    "figurinhas": [
+      ["63509dcbd33a389b5a15b2b5", 2],
+      ["63509e7ed33a389b5a15b2b7", 1]
+    ]
+  },
+  {
+    "_id": { "$oid": "6350a575d33a389b5a15b2bb" },
+    "nome": "sebatiao",
+    "figurinhas": [["63509e7ed33a389b5a15b2b7", 1]]
+  }
+]
