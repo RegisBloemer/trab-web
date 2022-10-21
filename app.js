@@ -4,8 +4,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const dbo = require("./db/conn");
 
-var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var loginRouter = require("./routes/login");
+var registerRouter = require("./routes/register");
+var stikersRouter = require("./routes/stikers");
 
 var app = express();
 
@@ -15,8 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/register", registerRouter);
+app.use("/api/user/stickers", stikersRouter);
 
 // perform a database connection when the server starts
 dbo.connectToServer((err) => {
