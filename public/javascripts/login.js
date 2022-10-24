@@ -3,8 +3,6 @@ console.log("login");
 const email = document.getElementById("email-i");
 const pass = document.getElementById("pass-i");
 
-
-
 async function submit(e) {
   e.preventDefault();
   console.log("email", email.value);
@@ -17,10 +15,12 @@ async function submit(e) {
 
   await window.cookieStore.set("id", result.id);
 
-  console.log(result);
-
+  if (result.id=== undefined) alert("Senha ou email incorreto!")
+  else window.location="http://localhost:3000/index.html"
+  
   // mandar para home
 }
 
 const form = document.getElementById("form");
 form.addEventListener("submit", submit);
+

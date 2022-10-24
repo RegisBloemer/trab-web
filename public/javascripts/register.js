@@ -16,9 +16,8 @@ async function submit(e) {
   await window.cookieStore.set("id", result.id);
 
   console.log(result);
-
-  // mandar para home
-  location.replace("/index.html");
+  if (result.id=== undefined) alert("Senha ou email incorreto!")
+  else window.location="http://localhost:3000/index.html"
 }
 
 const form = document.getElementById("form");
