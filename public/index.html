@@ -21,7 +21,6 @@
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"
     ></script>
-    <script src="/javascripts/postData.js"></script>
   </head>
   <body>
     <div class="container">
@@ -52,10 +51,13 @@
         </ul>
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
-            Login
-          </button>
-          <a href="/register.html">
+          <a href="/login">
+            <button type="button" class="btn btn-outline-primary me-2">
+              Login
+            </button>
+          </a>
+
+          <a href="/register">
             <button type="button" class="btn btn-primary">Sign-up</button>
           </a>
         </div>
@@ -67,54 +69,135 @@
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/0.jpeg" class="card-img" />
+            <label for="n-cards-0">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-0"
+              name="n-cards-0"
+              oninput="change_card(this.value,0)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/1.jpeg" class="card-img" />
+            <label for="n-cards-1">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-1"
+              name="n-cards-1"
+              oninput="change_card(this.value,1)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/2.jpeg" class="card-img" />
+            <label for="n-cards-2">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-2"
+              name="n-cards-2"
+              oninput="change_card(this.value,2)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/3.jpeg" class="card-img" />
+            <label for="n-cards-3">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-3"
+              name="n-cards-3"
+              oninput="change_card(this.value,3)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/4.jpeg" class="card-img" />
+            <label for="n-cards-4">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-4"
+              name="n-cards-4"
+              oninput="change_card(this.value,4)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/5.jpeg" class="card-img" />
+            <label for="n-cards-5">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-5"
+              name="n-cards-5"
+              oninput="change_card(this.value,5)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/6.jpeg" class="card-img" />
+            <label for="n-cards-6">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-6"
+              name="n-cards-6"
+              oninput="change_card(this.value,6)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/7.jpeg" class="card-img" />
+            <label for="n-cards-7">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-7"
+              name="n-cards-7"
+              oninput="change_card(this.value,7)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
 
         <div class="col">
           <div class="card shadow">
             <img src="/images/fig/8.jpeg" class="card-img" />
+            <label for="n-cards-8">Numero de cartas:</label>
+            <input
+              type="number"
+              id="n-cards-8"
+              name="n-cards-8"
+              oninput="change_card(this.value,8)"
+              min="0"
+              max="1000"
+            />
           </div>
         </div>
       </div>

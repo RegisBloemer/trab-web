@@ -38,8 +38,7 @@ router.post("/", async (req, res, next) => {
             .collection("user")
             .updateOne(
               { _id: new ObjectId(req.cookies.id) },
-              { $push: { "stickers": { id: id, quantity: quantity } } },
-              { upsert: true }
+              { $inc: { [`stickers.${id}`]: 1 } }
             );
 
           console.log("result", result);
