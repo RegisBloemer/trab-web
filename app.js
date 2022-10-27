@@ -4,10 +4,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const dbo = require("./db/conn");
 
-var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
-var stikersRouter = require("./routes/stikers");
+var stikersRouter = require("./routes/user/stikers");
 
 var app = express();
 
@@ -18,7 +17,6 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public"),{ extensions: ['html'] }));
 
-app.use("/api/users", usersRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/register", registerRouter);
 app.use("/api/user/stickers", stikersRouter);

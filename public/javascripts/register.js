@@ -1,4 +1,4 @@
-console.log("login");
+console.log("register");
 
 const email = document.getElementById("email-i");
 const pass = document.getElementById("pass-i");
@@ -23,15 +23,18 @@ async function submit(event) {
         body: JSON.stringify({
           email: email.value,
           pass: pass.value,
-          city: city.value
+          city: city.value,
         }),
       });
       const data = await response.json();
 
       if (response.status === 200) {
-        await window.cookieStore.set("id", data.id);
-        console.log("data", data);
-        window.location = "/";
+        if (data.id === undefined) {
+          alert("Senha ou email incorreto!");
+        } else {
+          await window.cookieStore.set("id", data.id);
+          window.location = "/";
+        }
       } else {
         console.log(data);
         alert(data.msg);

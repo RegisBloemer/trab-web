@@ -55,7 +55,7 @@
     </div>
 
     <main class="container">
-      <form id="form">
+      <form class="needs-validation" id="form" novalidate>
         <div class="mb-3">
           <label for="email-i" class="form-label">Email address</label>
           <input
@@ -63,11 +63,16 @@
             class="form-control"
             id="email-i"
             aria-describedby="emailHelp"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid city.</div>
         </div>
         <div class="mb-3">
           <label for="pass-i" class="form-label">Password</label>
-          <input type="password" class="form-control" id="pass-i" />
+          <input type="password" class="form-control" id="pass-i" required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid city.</div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
