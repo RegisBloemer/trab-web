@@ -1,32 +1,28 @@
-async function change_card(value, id) {
-  try {
-    const response = await fetch("/api/user/stickers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-        quantity: value,
-      }),
-    });
-    const data = await response.json();
-    console.log(data)
-  } catch (err) {
-    console.log("fetch", err);
-  }
-}
+const indice = `
+  <a
+    class="list-group-item list-group-item-action active"
+    id="list-home-list"
+    data-toggle="list"
+    href="#list-home"
+    role="tab"
+    aria-controls="home"
+  >
+    Home
+  </a>`
+
+const list_tab = document.getElementById("list-tab")
+
 
 window.addEventListener("load", (event) => {
   console.log("Todos os recursos terminaram o carregamento!");
 
-  fetch("http://localhost:3000/api/user/stickers")
+  fetch("/api/user/stickers/match")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      for (let i = 0; i <= 8; i++) {
-        document.getElementById("n-cards-" + i).value = data.stickers[i];
-      }
+      data.forEach(element => {
+        console.log(element)
+      });
     })
     .catch((err) => {
       console.log(err);

@@ -6,7 +6,7 @@ const dbo = require("./db/conn");
 
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
-var stikersRouter = require("./routes/user/stikers");
+var stikersRouter = require("./routes/user/stickers");
 
 var app = express();
 

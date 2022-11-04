@@ -28,8 +28,8 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-dark">Home</a></li>
-          <li><a href="#" class="nav-link px-2 link-secondary">Match</a></li>
+          <li><a href="/index" class="nav-link px-2 link-dark">Home</a></li>
+          <li><a href="/match" class="nav-link px-2 link-secondary">Match</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
@@ -47,139 +47,15 @@
     </div>
 
     <main class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4" id="grid-card">
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/0.jpeg" class="card-img" />
-            <label for="n-cards-0">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-0"
-              name="n-cards-0"
-              oninput="change_card(this.value,0)"
-              min="0"
-              max="1000"
-            />
+      <div class="row">
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/1.jpeg" class="card-img" />
-            <label for="n-cards-1">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-1"
-              name="n-cards-1"
-              oninput="change_card(this.value,1)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/2.jpeg" class="card-img" />
-            <label for="n-cards-2">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-2"
-              name="n-cards-2"
-              oninput="change_card(this.value,2)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/3.jpeg" class="card-img" />
-            <label for="n-cards-3">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-3"
-              name="n-cards-3"
-              oninput="change_card(this.value,3)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/4.jpeg" class="card-img" />
-            <label for="n-cards-4">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-4"
-              name="n-cards-4"
-              oninput="change_card(this.value,4)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/5.jpeg" class="card-img" />
-            <label for="n-cards-5">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-5"
-              name="n-cards-5"
-              oninput="change_card(this.value,5)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/6.jpeg" class="card-img" />
-            <label for="n-cards-6">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-6"
-              name="n-cards-6"
-              oninput="change_card(this.value,6)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/7.jpeg" class="card-img" />
-            <label for="n-cards-7">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-7"
-              name="n-cards-7"
-              oninput="change_card(this.value,7)"
-              min="0"
-              max="1000"
-            />
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow">
-            <img src="/images/fig/8.jpeg" class="card-img" />
-            <label for="n-cards-8">Numero de cartas:</label>
-            <input
-              type="number"
-              id="n-cards-8"
-              name="n-cards-8"
-              oninput="change_card(this.value,8)"
-              min="0"
-              max="1000"
-            />
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">teste home 123</div>
           </div>
         </div>
       </div>
@@ -191,6 +67,6 @@
         </a>
       </footer>
     </div>
-    <script src="/javascripts/index.js"></script>
+    <script src="/javascripts/match.js"></script>
   </body>
 </html>
