@@ -1,8 +1,6 @@
 const list_tab = document.getElementById("list-tab");
 const nav_tabContent = document.getElementById("nav-tabContent");
 
-const triggerTabList = document.querySelectorAll('#list-tab a')
-
 window.addEventListener("load", (event) => {
   console.log("Todos os recursos terminaram o carregamento!");
   var tmp_tab = "";
@@ -15,12 +13,10 @@ window.addEventListener("load", (event) => {
       if (data.length > 0) {
         tmp_tab = `
         <a
-          class="list-group-item list-group-item-action active"
-          id="list-${data[0]._id}-list"
-          data-toggle="list"
-          href="#${data[0]._id}"
+          class="list-group-item list-group-item-action active "
+          data-bs-toggle="list"
+          href="#id-${data[0]._id}"
           role="tab"
-          aria-controls="${data[0]._id}"
         >
           ${data[0].email}
         </a>
@@ -28,16 +24,25 @@ window.addEventListener("load", (event) => {
 
         let tmp_stickers = "";
         Object.keys(data[0].stickers).forEach((e) => {
-          tmp_stickers = tmp_stickers + `<li class="list-group-item">${data[0].stickers[e]}</li>`;
+          if (data[0].stickers[e] > 0) {
+            tmp_stickers =
+              tmp_stickers +
+              `<li 
+              class="list-group-item"
+            >
+              ${data[0].stickers[e]} Figurinhas <div class="col-5">
+                <img src="/images/fig/${e}.jpeg" class="img-thumbnail">
+              </div>
+            </li>`;
+          }
         });
 
         tmp_content = `
         <div 
-          class="tab-pane fade"
-          id="${data[0]._id}"
+          class="tab-pane active"
+          id="id-${data[0]._id}"
           role="tabpanel"
           >
-          teste
           <ul class="list-group list-group-flush">
             ${tmp_stickers}
           <ul>
@@ -53,24 +58,37 @@ window.addEventListener("load", (event) => {
             `
           <a
             class="list-group-item list-group-item-action"
-            id="list-home-list"
-            data-toggle="list"
-            href="#${element._id}"
+            data-bs-toggle="list"
+            href="#id-${element._id}"
             role="tab"
-            aria-controls="${element._id}"
           >
             ${element.email}
           </a>`;
+
+          let tmp_stickers = "";
+          Object.keys(element.stickers).forEach((e) => {
+            if (element.stickers[e] > 0) {
+              tmp_stickers =
+                tmp_stickers +
+                `<li class="list-group-item">
+                ${element.stickers[e]} Figurinhas <div class="col-5">
+                  <img src="/images/fig/${e}.jpeg" class="img-thumbnail">
+                </div>
+              </li>`;
+            }
+          });
 
           tmp_content =
             tmp_content +
             `
             <div 
-              class="tab-pane fade"
-              id="list-${element._id}"
+              class="tab-pane"
+              id="id-${element._id}"
               role="tabpanel"
-              aria-labelledby="list-${element._id}-list"
               >
+              <ul class="list-group list-group-flush">
+                ${tmp_stickers}
+              <ul>
             </div>
         `;
         });
@@ -83,13 +101,14 @@ window.addEventListener("load", (event) => {
     .finally(() => {
       list_tab.innerHTML = tmp_tab;
       nav_tabContent.innerHTML = tmp_content;
-      triggerTabList.forEach(triggerEl => {
-        const tabTrigger = new bootstrap.Tab(triggerEl)
-      
-        triggerEl.addEventListener('click', event => {
-          event.preventDefault()
-          tabTrigger.show()
-        })
-      })
+      const triggerTabList = document.querySelectorAll("#list-tab a");
+      triggerTabList.forEach((triggerEl) => {
+        const tabTrigger = new bootstrap.Tab(triggerEl);
+
+        triggerEl.addEventListener("click", (event) => {
+          event.preventDefault();
+          tabTrigger.show();
+        });
+      });
     });
 });
