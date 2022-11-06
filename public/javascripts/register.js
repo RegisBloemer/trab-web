@@ -6,6 +6,11 @@ const city = document.getElementById("city-i");
 const form = document.getElementById("form");
 form.addEventListener("submit", submit);
 
+/*
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+
+*/
+
 async function submit(event) {
   console.log("checkValidity", form.checkValidity());
   event.preventDefault();
